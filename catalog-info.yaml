@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mprsxs11f-nodejs-gitops
+  description: This is GitOps manifest for mprsxs11f-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mprsxs11f-nodejs
+    backstage.io/kubernetes-id: mprsxs11f-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mprsxs11f-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mprsxs11f-nodejs
